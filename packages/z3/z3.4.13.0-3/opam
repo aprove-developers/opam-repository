@@ -9,12 +9,12 @@ patches: [
   "libatomic.patch"
 ]
 build: [
-  [ "python3" "scripts/mk_make.py" "--ml" ]
+  [ "python3" "scripts/mk_make.py" "--ml" "--staticlib" ]
   [ make "-C" "build" "-j" jobs ]
 ]
 
 install: [
-  [ "sh" "-c" "ocamlfind install z3 build/api/ml/* -dll build/libz3.*"]
+  [ "sh" "-c" "ocamlfind install z3 build/api/ml/* -dll build/libz3-static.a"]
   [ "cp" "build/z3" "%{bin}%/z3"]
 ]
 
@@ -23,7 +23,6 @@ depends: [
   "ocamlfind" {build}
   "zarith"
   "conf-python-3" {build}
-  "conf-c++" {build}
 ]
 x-ci-accept-failures: [
   "centos-7" "oraclelinux-7" # C compiler is too old
