@@ -9,12 +9,12 @@ patches: [
   "gccstd-2a.patch" { (os-family = "opensuse" | os-family = "suse") | (os-distribution = "ubuntu" & os-version <= "20.04") }
 ]
 build: [
-  [ "python3" "scripts/mk_make.py" "--ml" ]
+  [ "python3" "scripts/mk_make.py" "--ml" "--staticlib"]
   [ make "-C" "build" "-j" jobs ]
 ]
 
 install: [
-  [ "sh" "-c" "ocamlfind install z3 build/api/ml/* -dll build/libz3.*"]
+  [ "sh" "-c" "ocamlfind install z3 build/api/ml/* -dll build/libz3-static.a"]
   [ "cp" "build/z3" "%{bin}%/z3"]
 ]
 
