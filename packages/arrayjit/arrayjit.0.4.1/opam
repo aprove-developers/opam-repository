@@ -11,6 +11,7 @@ tags: ["deeplearning" "array" "jit" "CUDA"]
 homepage: "https://github.com/lukstafi/ocannl"
 doc: "https://github.com/lukstafi/ocannl/blob/master/README.md"
 bug-reports: "https://github.com/lukstafi/ocannl/issues"
+x-maintenance-intent: ["(latest)"]
 depends: [
   "ocaml" {>= "5.2.0"}
   "dune" {>= "3.11"}
@@ -18,8 +19,8 @@ depends: [
   "core" {>= "v0.17.0"}
   "ctypes" {>= "0.23"}
   "ctypes-foreign" {>= "0.23"}
-  "printbox"
-  "printbox-text"
+  "printbox" {< "0.12"}
+  "printbox-text" {< "0.12"}
   "ocannl_npy"
   "stdio"
   "num"
@@ -27,7 +28,7 @@ depends: [
   "ppxlib"
   "ppx_jane"
   "ppx_expect"
-  "ppx_minidebug" {>= "2.0.0"}
+  "ppx_minidebug" {>= "2.0.0" & < "2.0.3"}
   "odoc" {with-doc}
 ]
 depopts: [

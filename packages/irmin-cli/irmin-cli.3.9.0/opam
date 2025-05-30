@@ -52,6 +52,11 @@ depends: [
   "mdx" {>= "2.0.0" & with-test}
 ]
 
+conflicts: [
+  "mirage-ptime"
+  "mirage-mtime"
+]
+
 synopsis: "CLI for Irmin"
 description: """
 A simple CLI tool (called `irmin`) to manipulate and inspect Irmin stores.

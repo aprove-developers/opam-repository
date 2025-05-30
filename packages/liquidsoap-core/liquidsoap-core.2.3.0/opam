@@ -83,6 +83,7 @@ conflicts: [
   "ffmpeg" {< "1.2.0"}
   "ffmpeg-avutil" {< "1.2.0"}
   "flac" {< "0.3.0"}
+  "flac" {> "1.0.0"}
   "frei0r" {< "0.1.0"}
   "inotify" {< "1.0"}
   "ladspa" {< "0.2.0"}
@@ -100,7 +101,7 @@ conflicts: [
   "shine" {< "0.2.0"}
   "soundtouch" {< "0.1.9"}
   "speex" {< "0.4.0"}
-  "srt" {< "0.3.0"}
+  "srt" {< "0.3.3"}
   "ssl" {< "0.7.0"}
   "tls" {< "1.0.2"}
   "sdl-liquidsoap" {< "2"}

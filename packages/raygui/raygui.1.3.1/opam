@@ -10,8 +10,8 @@ depends: [
   "dune" {>= "2.8"}
   "dune-configurator"
   "ctypes" {>= "0.14"}
-  "raylib" {>= "0.6"}
-  "patch" {>= "2.0"}
+  "raylib" {>= "0.6" & < "1.4.0"}
+  "patch" {>= "2.0" & < "3.0"}
   "odoc" {with-doc}
 ]
 build: [

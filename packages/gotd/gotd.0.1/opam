@@ -10,9 +10,9 @@ depends: [
   "dune" {>= "2.8"}
   "ocaml" {>= "4.13"}
   "bos"
-  "directories"
+  "directories" {< "0.6"}
   "fpath"
-  "scfg"
+  "scfg" {< "0.4"}
   "odoc" {with-doc}
 ]
 conflicts: ["rresult" {< "0.7"}]

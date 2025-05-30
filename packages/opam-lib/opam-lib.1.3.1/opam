@@ -28,6 +28,7 @@ depends: [
   "ocamlfind" {build}
   "jsonm"
 ]
+flags: deprecated
 synopsis: "The OPAM library"
 description: """
 OPAM is The OCaml PAckage Manager. This package contains the OPAM
@@ -45,3 +46,4 @@ url {
     "md5=e0688c0cf9a55f93ee93f62d07cf6b74"
   ]
 }
+x-maintenance-intent: ["(none)"]

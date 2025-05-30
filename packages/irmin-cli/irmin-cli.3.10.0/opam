@@ -52,6 +52,11 @@ depends: [
   "mdx" {>= "2.0.0" & with-test}
 ]
 
+conflicts: [
+  "mirage-ptime"
+  "mirage-mtime"
+]
+
 synopsis: "CLI for Irmin"
 description: """
 A simple CLI tool (called `irmin`) to manipulate and inspect Irmin stores.
@@ -65,3 +70,4 @@ url {
   ]
 }
 x-commit-hash: "7fa4b043a97944635cc100ae2e7dd85f73d8a4ce"
+x-maintenance-intent: [ "(latest)" ]

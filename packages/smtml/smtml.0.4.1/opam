@@ -16,7 +16,7 @@ homepage: "https://github.com/formalsec/smtml"
 doc: "https://formalsec.github.io/smtml/smtml/index.html"
 bug-reports: "https://github.com/formalsec/smtml/issues"
 depends: [
-  "cmdliner" {>= "1.2.0"}
+  "cmdliner" {>= "1.2.0" & < "2.0.0"}
   "dune" {>= "3.10"}
   "dune-glob" {with-test}
   "dolmen" {= "0.10"}
@@ -28,7 +28,7 @@ depends: [
   "ocaml" {>= "4.14.0"}
   "ocaml_intrinsics"
   "patricia-tree" {>= "0.10.0"}
-  "prelude" {>= "0.3"}
+  "prelude" {= "0.3"}
   "rusage"
   "scfg"
   "yojson" {>= "1.6.0"}
@@ -47,8 +47,9 @@ depends: [
 ]
 depopts: ["alt-ergo-lib" "bitwuzla-cxx" "colibri2" "cvc5" "z3"]
 conflicts: [
-  "bitwuzla-cxx" {< "0.6.0"}
+  "bitwuzla-cxx" {< "0.6.0" | >= "0.7.0"}
   "z3" {< "4.12.2" | >= "4.14"}
+  "alt-ergo-lib" {>= "2.6.1"}
 ]
 available: arch != "arm32" & arch != "x86_32"
 build: [
