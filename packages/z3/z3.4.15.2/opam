@@ -9,14 +9,14 @@ patches: [
   "gccstd-2a.patch" { (os-family = "opensuse" | os-family = "suse") | (os-distribution = "ubuntu" & os-version <= "20.04") }
 ]
 build: [
-  [ "python3" "scripts/mk_make.py" "--ml" ] {os-distribution != "homebrew"}
+  [ "python3" "scripts/mk_make.py" "--ml" "--staticlib" ] {os-distribution != "homebrew"}
   [ make "-C" "build" "-j" jobs ] {os-distribution != "homebrew"}
   [ "sh" "-c" """#!/bin/sh
     PATH=/usr/local/opt/llvm/bin:$PATH
     LDFLAGS="-L/usr/local/opt/llvm/lib $LDFLAGS"
     CPPFLAGS="-I/usr/local/opt/llvm/include $CPPFLAGS"
     export PATH LDFLAGS CPPFLAGS
-    python3 scripts/mk_make.py --ml
+    python3 scripts/mk_make.py --ml --staticlib
     make -C build -j %{jobs}%
   """] {os-distribution = "homebrew" & arch = "x86_64"}
   [ "sh" "-c" """#!/bin/sh
@@ -24,13 +24,13 @@ build: [
     LDFLAGS="-L/opt/homebrew/opt/llvm/lib $LDFLAGS"
     CPPFLAGS="-I/opt/homebrew/opt/llvm/include $CPPFLAGS"
     export PATH LDFLAGS CPPFLAGS
-    python3 scripts/mk_make.py --ml
+    python3 scripts/mk_make.py --ml --staticlib
     make -C build -j %{jobs}%
   """] {os-distribution = "homebrew" & arch = "arm64"}
 ]
 
 install: [
-  [ "sh" "-c" "ocamlfind install z3 build/api/ml/* -dll build/libz3.*"]
+  [ "sh" "-c" "ocamlfind install z3 build/api/ml/* build/libz3-static.a"]
   [ "cp" "build/z3" "%{bin}%/z3"]
 ]
 
