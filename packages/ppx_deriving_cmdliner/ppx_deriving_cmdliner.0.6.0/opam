@@ -8,6 +8,7 @@ authors: [
   "Armaël Guéneau <armael.gueneau@ens-lyon.fr>"
   "Tom Repetti <trepetti@cs.columbia.edu>"
   "Marcello Seri <m.seri@rug.nl>"
+  "Sonja Heinze <sonjaleaheinze@gmail.com>"
 ]
 homepage: "https://github.com/hammerlab/ppx_deriving_cmdliner"
 bug-reports: "https://github.com/hammerlab/ppx_deriving_cmdliner/issues"
@@ -23,12 +24,12 @@ run-test: [
   ["dune" "runtest" "-p" name "-j" jobs]
 ]
 depends: [
-  "ocaml"        {>= "4.05"}
-  "cmdliner" {>= "1.0.0" & < "2.0.0"}
+  "ocaml"        {>= "4.08"}
+  "cmdliner"     {>= "1.1.0"}
   "result"
   "ppx_deriving" {>= "5.0"}
   "dune"
-  "ppxlib"       {>= "0.18.0" & < "0.26.0"}
+  "ppxlib"       {>= "0.26.0"}
   "alcotest"     {with-test}
 ]
 synopsis: "Cmdliner.Term.t generator"
@@ -37,9 +38,6 @@ ppx_deriving_cmdliner is a ppx_deriving plugin that generates
 a Cmdliner Term.t for a record type."""
 url {
   src:
-    "https://github.com/hammerlab/ppx_deriving_cmdliner/archive/refs/tags/v0.6.0.tar.gz"
-  checksum: [
-    "sha256=858b040231bacc6cbf1028d92710d87dc1c19855541d9c9624a61bd378127edc"
-    "md5=5a1050704c477f0ee46001cc2f4fe697"
-  ]
+    "https://github.com/hammerlab/ppx_deriving_cmdliner/archive/1f086651fe7f8dd98e371b09c6fcc4dbc6db1c7c.tar.gz"
+  checksum: "md5=9a2cd53393c9f7767f0e0f17fed95f6f"
 }
